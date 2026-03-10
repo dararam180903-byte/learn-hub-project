@@ -1,5 +1,4 @@
-/* RESET */
-
+/* ===== RESET ===== */
 *{
 margin:0;
 padding:0;
@@ -10,8 +9,7 @@ list-style:none;
 box-sizing:border-box;
 }
 
-/* VARIABLES */
-
+/* ===== VARIABLES ===== */
 :root{
 
 --color-primary:#2E97A7;
@@ -20,62 +18,58 @@ box-sizing:border-box;
 --color-success:#00bf8e;
 --color-warning:#f7c94b;
 --color-danger:#EB6440;
-
 --color-white:#fff;
 --color-light:rgba(255,255,255,0.7);
 --color-black:#000;
-
 --color-bg:#10364a;
 --color-bg1:#176B87;
 --color-bg2:#427D9D;
 
 --transition:all .35s ease;
 
+--container-width-lg:76%;
+--container-width-md:90%;
+--container-width-sm:94%;
+
 }
 
-/* BODY */
-
+/* ===== BODY ===== */
 body{
-
 min-height:100vh;
 background:var(--color-bg);
 font-family:'Montserrat Alternates',sans-serif;
 
 display:flex;
-flex-direction:column; /* IMPORTANTE */
-
-align-items:center;
-justify-content:flex-start;
+flex-direction:column;
 
 padding-top:120px;
-
+line-height:1.6;
 }
 
-/* CONTENEDOR */
-
+/* ===== WRAPPER ===== */
 .wrapper{
 
-width:100%;
-max-width:450px;
+width:90%;
+max-width:500px;
 
 background:white;
-
 border-radius:18px;
 
 padding:18px;
 
 box-shadow:0 20px 40px rgba(0,0,0,.25);
 
+margin:0 auto;
+
 }
 
-/* HEADER TABS */
+/* ===== HEADER TABS ===== */
 
 .wrapper header{
 
 height:60px;
 
 display:flex;
-
 align-items:center;
 
 border:2px solid #e5e5e5;
@@ -83,7 +77,6 @@ border:2px solid #e5e5e5;
 border-radius:40px;
 
 position:relative;
-
 overflow:hidden;
 
 }
@@ -97,7 +90,6 @@ flex:1;
 height:100%;
 
 display:flex;
-
 align-items:center;
 justify-content:center;
 
@@ -140,63 +132,49 @@ transition:var(--transition);
 
 }
 
-/* POSICIÓN SLIDER */
+/* POSICIONES */
 
 #tab-1:checked ~ header .slider{
-
 left:5px;
 width:32%;
-
 }
 
 #tab-2:checked ~ header .slider{
-
 left:34%;
 width:32%;
-
 }
 
 #tab-3:checked ~ header .slider{
-
 left:67%;
 width:32%;
-
 }
 
 .wrapper input[type="radio"]{
 display:none;
 }
 
-/* CARD AREA */
+/* ===== CARDS ===== */
 
 .card-area{
 
 overflow:hidden;
-
 margin-top:20px;
-
 color:#333;
 
 }
 
-/* CARDS */
-
 .cards{
 
 display:flex;
-
 width:300%;
 
 transition:.4s;
 
 }
 
-/* ROW */
-
 .cards .row{
 
 width:33.33%;
-
 padding:10px;
 
 }
@@ -204,24 +182,18 @@ padding:10px;
 /* MOVIMIENTO */
 
 #tab-1:checked ~ .card-area .cards{
-
 transform:translateX(0);
-
 }
 
 #tab-2:checked ~ .card-area .cards{
-
 transform:translateX(-33.33%);
-
 }
 
 #tab-3:checked ~ .card-area .cards{
-
 transform:translateX(-66.66%);
-
 }
 
-/* PRICE */
+/* ===== PRICE ===== */
 
 .price-details{
 
@@ -238,7 +210,6 @@ margin-bottom:15px;
 .price-details .price{
 
 font-size:58px;
-
 font-weight:700;
 
 position:relative;
@@ -247,8 +218,6 @@ color:var(--color-bg1);
 
 }
 
-/* SIGNO */
-
 .price::before{
 
 content:"$";
@@ -256,7 +225,6 @@ content:"$";
 position:absolute;
 
 left:-16px;
-
 top:12px;
 
 font-size:20px;
@@ -270,7 +238,6 @@ content:"MXN";
 position:absolute;
 
 right:-42px;
-
 bottom:10px;
 
 font-size:13px;
@@ -280,19 +247,16 @@ font-size:13px;
 .price-details p{
 
 font-size:15px;
-
 margin-top:5px;
-
 color:#666;
 
 }
 
-/* FEATURES */
+/* ===== FEATURES ===== */
 
 .features li{
 
 display:flex;
-
 align-items:center;
 
 margin-bottom:12px;
@@ -301,23 +265,18 @@ font-size:14px;
 
 }
 
-/* ICONO */
-
 .features li i{
 
 color:var(--color-success);
-
 font-size:18px;
 
 }
 
 .features li span{
-
 margin-left:10px;
-
 }
 
-/* BOTÓN */
+/* ===== BOTÓN ===== */
 
 .wrapper button{
 
@@ -328,7 +287,6 @@ height:52px;
 border-radius:30px;
 
 font-size:17px;
-
 font-weight:600;
 
 color:white;
@@ -343,8 +301,6 @@ transition:var(--transition);
 
 }
 
-/* HOVER BOTÓN */
-
 .wrapper button:hover{
 
 transform:translateY(-3px);
@@ -353,68 +309,62 @@ box-shadow:0 10px 20px rgba(0,0,0,.25);
 
 }
 
-/* RESPONSIVE */
-
-@media (max-width:600px){
-
-.wrapper{
-
-max-width:95%;
-
-}
-
-.price-details .price{
-
-font-size:48px;
-
-}
-
-}
-
-
 /* ===== FOOTER ===== */
 
 .footer{
+
 background:var(--color-bg1);
+
 padding:6rem 0 2rem;
+
 font-size:0.9rem;
-position:relative;
+
+width:100%;
+
+margin-top:4rem;
+
 }
 
 /* GRID */
 
 .footer__container{
+
 display:grid;
+
 grid-template-columns:repeat(4,1fr);
+
 gap:3rem;
+
 align-items:flex-start;
+
+width:var(--container-width-lg);
+
+margin:0 auto;
+
 }
 
 /* TITULOS */
 
 .footer__container h4{
-margin-bottom:1.3rem;
-font-size:1.1rem;
-color:var(--color-white);
-position:relative;
-}
 
-.footer__container h4::after{
-content:"";
-display:block;
-width:40px;
-height:3px;
-background:var(--color-primary);
-margin-top:6px;
-border-radius:2px;
+margin-bottom:1.3rem;
+
+font-size:1.1rem;
+
+color:var(--color-white);
+
 }
 
 /* TEXTO */
 
 .footer__1 p{
+
 margin-top:1rem;
+
 color:var(--color-light);
+
 line-height:1.6;
+
 }
 
 /* LINKS */
@@ -424,524 +374,155 @@ margin-bottom:0.8rem;
 }
 
 .footer ul li a{
+
 color:var(--color-light);
+
 transition:var(--transition);
+
 }
 
 .footer ul li a:hover{
+
 color:var(--color-white);
+
 padding-left:6px;
+
 }
 
-/* CONTACTO */
-
-.footer__4 p{
-margin-bottom:6px;
-color:var(--color-light);
-}
-
-/* ===== REDES SOCIALES ===== */
+/* REDES */
 
 .footer__social{
+
 margin-top:1.5rem;
+
 display:flex;
 flex-wrap:wrap;
-gap:10px;
-}
 
-.footer__social li{
-list-style:none;
+gap:10px;
+
 }
 
 .footer__social .button{
+
 display:flex;
 align-items:center;
+
 gap:10px;
+
 padding:8px 14px;
+
 background:var(--color-bg);
+
 border-radius:50px;
+
 cursor:pointer;
+
 transition:var(--transition);
+
 }
 
 .footer__social .button:hover{
+
 background:var(--color-primary);
+
 transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
 }
 
-/* ICONO */
-
-.footer__social .icon{
-width:32px;
-height:32px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:var(--color-bg2);
-}
-
-.footer__social .icon i{
-font-size:16px;
-color:var(--color-white);
-}
-
-/* TEXTO RED */
-
-.footer__social span{
-font-size:0.85rem;
-font-weight:500;
-color:var(--color-white);
-}
-
-/* ===== COPYRIGHT ===== */
+/* COPYRIGHT */
 
 .footer__copyright{
+
 margin-top:4rem;
+
 padding-top:1.5rem;
+
 border-top:1px solid var(--color-bg2);
+
 text-align:center;
+
 color:var(--color-light);
+
 font-size:0.85rem;
+
+width:var(--container-width-lg);
+
+margin-left:auto;
+margin-right:auto;
+
 }
 
+/* ===== TABLET ===== */
 
-/* ===== RESPONSIVE DESIGN - TABLAS DE PRECIOS ===== */
+@media screen and (max-width:1024px){
 
-/* TABLET PEQUEÑA Y MÓVIL GRANDE (hasta 768px) */
-@media screen and (max-width: 768px) {
-    body {
-        padding-top: 80px;
-    }
-
-    .wrapper {
-        max-width: 90%;
-    }
-
-    /* HEADER TABS */
-    .wrapper header {
-        height: 50px;
-    }
-
-    header label {
-        font-size: 14px;
-    }
-
-    /* PRICE DETAILS */
-    .price-details .price {
-        font-size: 48px;
-    }
-
-    .price::before {
-        left: -14px;
-        top: 10px;
-        font-size: 18px;
-    }
-
-    .price::after {
-        right: -38px;
-        bottom: 8px;
-        font-size: 12px;
-    }
-
-    .price-details p {
-        font-size: 14px;
-    }
-
-    /* FEATURES */
-    .features li {
-        font-size: 13px;
-        margin-bottom: 10px;
-    }
-
-    .features li i {
-        font-size: 16px;
-    }
-
-    /* BUTTON */
-    .wrapper button {
-        height: 48px;
-        font-size: 16px;
-    }
+body{
+padding-top:100px;
 }
 
-/* MÓVIL (hasta 600px) */
-@media screen and (max-width: 600px) {
-    body {
-        padding-top: 60px;
-        justify-content: center;
-    }
+.footer__container{
 
-    .wrapper {
-        max-width: 95%;
-        padding: 15px;
-        border-radius: 15px;
-    }
+grid-template-columns:repeat(2,1fr);
 
-    /* HEADER TABS */
-    .wrapper header {
-        height: 45px;
-        border-width: 1.5px;
-    }
+gap:2.5rem;
 
-    header label {
-        font-size: 13px;
-        font-weight: 500;
-    }
+width:var(--container-width-md);
 
-    /* SLIDER POSITIONS */
-    #tab-1:checked ~ header .slider {
-        left: 4px;
-        width: 31%;
-    }
-
-    #tab-2:checked ~ header .slider {
-        left: 33%;
-        width: 31%;
-    }
-
-    #tab-3:checked ~ header .slider {
-        left: 66%;
-        width: 31%;
-    }
-
-    /* PRICE DETAILS */
-    .price-details .price {
-        font-size: 42px;
-    }
-
-    .price::before {
-        left: -12px;
-        top: 8px;
-        font-size: 16px;
-    }
-
-    .price::after {
-        right: -32px;
-        bottom: 6px;
-        font-size: 11px;
-    }
-
-    .price-details p {
-        font-size: 13px;
-    }
-
-    /* FEATURES */
-    .features li {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-
-    .features li span {
-        margin-left: 8px;
-    }
-
-    /* BUTTON */
-    .wrapper button {
-        height: 44px;
-        font-size: 15px;
-        margin-top: 12px;
-    }
-
-    .wrapper button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-    }
 }
 
-/* MÓVIL PEQUEÑO (hasta 480px) */
-@media screen and (max-width: 480px) {
-    body {
-        padding: 40px 10px;
-    }
-
-    .wrapper {
-        padding: 12px;
-    }
-
-    /* HEADER TABS */
-    .wrapper header {
-        height: 40px;
-    }
-
-    header label {
-        font-size: 12px;
-    }
-
-    /* SLIDER POSITIONS */
-    #tab-1:checked ~ header .slider {
-        left: 3px;
-        width: 30%;
-    }
-
-    #tab-2:checked ~ header .slider {
-        left: 32%;
-        width: 30%;
-    }
-
-    #tab-3:checked ~ header .slider {
-        left: 65%;
-        width: 30%;
-    }
-
-    /* PRICE DETAILS */
-    .price-details {
-        padding-bottom: 15px;
-    }
-
-    .price-details .price {
-        font-size: 36px;
-    }
-
-    .price::before {
-        left: -10px;
-        top: 6px;
-        font-size: 14px;
-    }
-
-    .price::after {
-        right: -28px;
-        bottom: 5px;
-        font-size: 10px;
-    }
-
-    .price-details p {
-        font-size: 12px;
-    }
-
-    /* FEATURES */
-    .features li {
-        font-size: 11px;
-        margin-bottom: 7px;
-    }
-
-    .features li i {
-        font-size: 14px;
-    }
-
-    .features li span {
-        margin-left: 6px;
-    }
-
-    /* BUTTON */
-    .wrapper button {
-        height: 40px;
-        font-size: 14px;
-        border-radius: 25px;
-    }
+.footer__copyright{
+width:var(--container-width-md);
 }
 
-/* PANTALLAS MUY PEQUEÑAS (hasta 360px) */
-@media screen and (max-width: 360px) {
-    body {
-        padding: 30px 8px;
-    }
-
-    .wrapper {
-        padding: 10px;
-        border-radius: 12px;
-    }
-
-    /* HEADER TABS */
-    .wrapper header {
-        height: 36px;
-    }
-
-    header label {
-        font-size: 11px;
-    }
-
-    /* SLIDER POSITIONS */
-    #tab-1:checked ~ header .slider {
-        left: 3px;
-        width: 29%;
-    }
-
-    #tab-2:checked ~ header .slider {
-        left: 31%;
-        width: 29%;
-    }
-
-    #tab-3:checked ~ header .slider {
-        left: 64%;
-        width: 29%;
-    }
-
-    /* PRICE DETAILS */
-    .price-details {
-        padding-bottom: 12px;
-    }
-
-    .price-details .price {
-        font-size: 32px;
-    }
-
-    .price::before {
-        left: -8px;
-        top: 5px;
-        font-size: 12px;
-    }
-
-    .price::after {
-        right: -24px;
-        bottom: 4px;
-        font-size: 9px;
-    }
-
-    .price-details p {
-        font-size: 11px;
-        margin-top: 3px;
-    }
-
-    /* FEATURES */
-    .features li {
-        font-size: 10px;
-        margin-bottom: 6px;
-    }
-
-    .features li i {
-        font-size: 12px;
-    }
-
-    .features li span {
-        margin-left: 5px;
-    }
-
-    /* BUTTON */
-    .wrapper button {
-        height: 36px;
-        font-size: 12px;
-        border-radius: 20px;
-        margin-top: 10px;
-    }
-
-    .wrapper button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
-    }
 }
 
-/* ===== FOOTER RESPONSIVE ===== */
-@media screen and (max-width: 1024px) {
-    .footer__container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
-    }
+/* ===== MÓVIL ===== */
+
+@media screen and (max-width:768px){
+
+body{
+padding-top:80px;
 }
 
-@media screen and (max-width: 768px) {
-    .footer {
-        padding: 4rem 0 2rem;
-    }
-
-    .footer__container {
-        gap: 2rem;
-        padding: 0 2rem;
-    }
-
-    .footer__social .button {
-        padding: 6px 12px;
-    }
-
-    .footer__social .icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .footer__social span {
-        font-size: 0.8rem;
-    }
+.wrapper{
+width:95%;
 }
 
-@media screen and (max-width: 600px) {
-    .footer {
-        padding: 3rem 0 1.5rem;
-        text-align: center;
-    }
+.footer__container{
 
-    .footer__container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1.5rem;
-    }
+grid-template-columns:1fr;
 
-    .footer__container h4::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
+text-align:center;
 
-    .footer__1 p {
-        margin: 1rem auto;
-        max-width: 300px;
-    }
+width:var(--container-width-sm);
 
-    .footer ul li {
-        margin-bottom: 0.6rem;
-    }
-
-    .footer__social {
-        justify-content: center;
-    }
-
-    .footer__copyright {
-        margin-top: 2rem;
-        padding-top: 1rem;
-        font-size: 0.75rem;
-    }
 }
 
-@media screen and (max-width: 480px) {
-    .footer {
-        padding: 2.5rem 0 1rem;
-    }
-
-    .footer__container {
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .footer__container h4 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .footer__container h4::after {
-        width: 30px;
-        height: 2px;
-    }
-
-    .footer__1 p {
-        font-size: 0.8rem;
-    }
-
-    .footer ul li a {
-        font-size: 0.8rem;
-    }
-
-    .footer__social {
-        gap: 8px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer__social .button {
-        width: fit-content;
-        min-width: 130px;
-        justify-content: center;
-    }
-
-    .footer__social .icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer__social .icon i {
-        font-size: 14px;
-    }
-
-    .footer__social span {
-        font-size: 0.75rem;
-    }
+.footer__social{
+justify-content:center;
 }
 
+}
+
+/* ===== MÓVIL PEQUEÑO ===== */
+
+@media screen and (max-width:480px){
+
+.wrapper{
+padding:15px;
+}
+
+.price-details .price{
+font-size:42px;
+}
+
+.features li{
+font-size:13px;
+}
+
+.wrapper button{
+height:46px;
+font-size:15px;
+}
+
+}
